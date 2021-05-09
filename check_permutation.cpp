@@ -1,3 +1,8 @@
+/* #2: Check if 2 strings are permutations of each other
+       
+       Again, I used a hash table to solve this problem, which will give 
+       a runtime complexity of O(n)
+*/
 #include <iostream>
 #include <string>
 #include <iterator>
@@ -20,8 +25,9 @@ int main(int argc, char * argv[]){
         for(int i = 0; i < str1.length(); i++){
             comparator.insert(std::make_pair(str1[i], 0));
         }
-        for(int i = 0; i < str1.length(); i++){
-            comparator.insert(std::make_pair(str1[i], ++comparator[str1[i]]));
+
+        for(auto i : str1){
+            comparator.insert(std::make_pair(i, ++comparator[i]));
         }
 
         //Now compare str2
@@ -39,8 +45,6 @@ int main(int argc, char * argv[]){
 
         std::cout << "The strings are permutations of each other\n";
     }
-
-
 
     return 0;
 }
