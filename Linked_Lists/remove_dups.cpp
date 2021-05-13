@@ -7,7 +7,8 @@
     In this case we are working with a linked list of integers.
     Iterating through the linked list is O(n). Looking up values
     in the hash table to find duplicates is O(1) for n elements.
-    This is an O(2n) = O(n) algorithm as a whole.
+    A removal from the list is an O(1) operation.
+    This is an O(3n) = O(n) algorithm as a whole.
 
 */
 #include <iostream>
