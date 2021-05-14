@@ -2,6 +2,9 @@
 
     For this I created a singly-linked list class to go more
     in-depth with this solution, which can be found in 'single_list.h'
+    It makes the list out of the first elements, and the last element
+    serves as the 'k' value.
+    This is an O(n) algorithm.
 
 */
 #include <iostream>
