@@ -25,7 +25,6 @@ class single_list{
                 tail->next = s;
                 tail = s;
             }
-
             size++;
         }
         int get_size(){
