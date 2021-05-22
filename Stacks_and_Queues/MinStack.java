@@ -2,25 +2,17 @@
 // the minimum can all be found in O(1) time.
 //
 // This simply uses a standard stack to track minimums
-// when the MinStack has a push or pop operation
+// when the MinStack has a push or pop operation.
 import java.util.EmptyStackException;
 
-public class MinStack<T>{
-    private static class MinStackNode<T>{
-        private T data;
-        private MinStackNode<T> next;
+public class MinStack<T> extends MyStack<T>{
 
-        public MinStackNode(T data){
-            this.data = data;
-        }   
-    }
+    protected T min;
+    protected MyStack<T> minimums;
 
-    private MinStackNode<T> top;
-    private T min;
-    private MyStack<T> minimums;
-
-
+    @Override
     public T pop(){
+        
         if(top == null){
             throw new EmptyStackException();
         }
@@ -38,8 +30,9 @@ public class MinStack<T>{
         return item;
     }
 
+    @Override
     public void push(T item){
-        MinStackNode<T> t = new MinStackNode<T>(item);
+        StackNode<T> t = new StackNode<T>(item);
         t.next = top;
         top = t;
 
@@ -58,14 +51,4 @@ public class MinStack<T>{
         return min;
     }
 
-    public T peek(){
-        if(top == null){
-            throw new EmptyStackException();
-        }
-        return top.data;
-    }
-
-    public boolean isEmpty(){
-        return top == null;
-    }
 }
