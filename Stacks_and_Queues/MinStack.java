@@ -7,12 +7,11 @@ import java.util.EmptyStackException;
 
 public class MinStack<T> extends MyStack<T>{
 
-    protected T min;
-    protected MyStack<T> minimums;
+    private T min;
+    private MyStack<T> minimums;
 
     @Override
     public T pop(){
-        
         if(top == null){
             throw new EmptyStackException();
         }
