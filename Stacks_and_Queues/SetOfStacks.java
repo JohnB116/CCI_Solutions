@@ -1,6 +1,8 @@
 /* #3, implement a data structure consisting of multiple stacks which
     cascade onto the next if the stack size limit is reached.
 
+    I took a pretty simplistic approach to this one, reusing pre-defined
+    functions and tools where I can.
 */
 
 import java.util.ArrayList;
